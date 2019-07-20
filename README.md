@@ -1,6 +1,11 @@
 # AWS-Serverless-Infrastructure-as-Code-Exercise
 An exercise using terraform to deploy a API Gateway instance which passes requests to Lambda for processing
 
+## The Task
+- stores the infrastructure code within GitHub.
+- configured aws resources with [infrastructure as code](https://martinfowler.com/bliki/InfrastructureAsCode.html).
+- uses [CircleCI](https://circleci.com) to deploy updates to the infrastructure using [continuous delivery](https://martinfowler.com/bliki/ContinuousDelivery.html).
+- Uses backend state in AWS S3 bucket
 
 ## Use Infrastructure as Code to Create the API and Lambda.
 We should create the API Gateway and Lambda with Terraform (or another Infrastructure as code tool) so this is managable just like code using pull requests and reviews. When we change the infrastructure code this should run through a continuous delivery pipeline and update AWS resources just like we would with code.
