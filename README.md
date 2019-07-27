@@ -1,44 +1,53 @@
 # AWS-Serverless-Infrastructure-as-Code-Exercise
-An exercise using terraform (for infrastructure as code) to deploy a API Gateway instance which passes requests to Lambda for processing
+An exercise using terraform (for infrastructure as code) to deploy a API Gateway instance which passes requests to Lambda for processing.
 
 ## The Task
-In this exercise you're tasked to make a ######## that:
-- stores the infrastructure code within GitHub.
-- configures aws resources with [infrastructure as code](https://martinfowler.com/bliki/InfrastructureAsCode.html).
-- uses [CircleCI](https://circleci.com) to deploy updates to the infrastructure using [continuous delivery](https://martinfowler.com/bliki/ContinuousDelivery.html).
-- Uses backend state in AWS S3 bucket
+In this exercise you're tasked to make a repository that:
+- configures aws resources by writing your [infrastructure as code](https://martinfowler.com/bliki/InfrastructureAsCode.html).
+- stores the infrastructure code within a GitHub repository.
 
 ## What will you learn?
-- Write your infrastructure as code with terraform
-- security share API keys for your AWS account with CircleCI to be used by Terraform.
+- Write your infrastructure as code with terraform.
 - locally store your API keys in a AWS Credentials file for local development.
-- Continuous Delivery of Infrastructure changes using CircleCI.
 
 ## Disclaimer
-Note: When using Terraform ***DO NOT*** commit your Secret and AUthenitication AWS Keys into your github account - bots will crawl this and steal access to your account.
-You should Use IAM (Identity and Access Management) to create a new User and attach only Policies for the services that you are about to provision with terraform. Use the set of Keys in CIRCLECI environment variables and pass them in via that, instead of committing them to your repo.
+Note: You should ***NEVER*** commit your AWS Access Key and Secret key into your github repository - bots will crawl this and steal access to your account. _Guard these keys with your life._ If you do make a mistake you can Deactivate the key in the AWS Console, and issue yourself a new one.
 
-## ####Part 1### Steps
-### Let's setup the #########:
-1) Look up how to setup your local AWS CLI and configure your AWS security keys in the credientials file 
-2) Install Terraform
-3) What do terraform init, plan, apply commands do?
-4) Setup a S3 bucket using terraform and view the bucket has shown up in AWS in your browser.
-5) Delete the S3 bucket from your terraform codebase and add a Lambda function. You'll need to bundle the zip file for the lambda code to deploy successfully.
-6) Maybe configure API Gateway - I'd suggest you put it in a file called apigateway.tf in the same folder as your lambda terraform code.
-7) Add a S3 bucket in your terraform code and then manually upload the zip file into it using AWS CLI or in your browser.
+## Let's setup the basics
+1) Look up how to setup your local AWS CLI and configure your AWS security keys in the credientials file.
+2) [Install Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html)
+3) Look up what terraform init, plan, apply commands do? [Getting Started With Terraform](https://learn.hashicorp.com/terraform/getting-started/build.html)
+4) Setup a S3 bucket (in the console first if you've never done it then) using terraform and view the bucket has shown up in AWS in your browser.
+5) Delete the S3 bucket from your terraform codebase and a Simple Notification Service instance [SNS](https://aws.amazon.com/sns/). 
+6) Run terraform plan and see what the plan output says - how many things are deleted, how many are added?
+7) Ask your neighbor where they're at, and help them to complete the setup because the next bit we need small teams!
 
+## Lets setup something a bit more complicated:
+If you want to build the full infrastructure as code for the Serverless API endpoint I request you pair up with a buddy or two! There are several peices and you'll be better off working together. 
 
-### Lets setup the API:
-1) 
-2) 
-3) 
+The following tasks need to be done to make a working solution, I'm a pain and I've shuffled the instructions so together you have to work out:
+- how it hangs together
+- how to independently work on bits without depending on each other too much.
+- try rate each step on complexity 1, 3, 5, 8. 
+- 
+hint: use a whiteboard!
+
+Steps:
+A - ZIP the lambda code and commit it into your Github repo where the Lambda code lives - lookup the zip format aws requires.
+B - A API Gateway resource defined in terraform.
+C - Connect the API Gateway to the Lambda in terraform.
+D - Make the CircleCI job push the Lambda zip file into a S3 bucket anytime someone commits.
+E - A Lambda function resource defined in terraform.
+I - Make a branch on this repository to hold all infrastructure as code artifacts.
+F - Check the terraform repository does not have AWS Secret + Access keys - if it does revoke them immediately.
+G - Make a S3 bucket that the Lambda code lives in.
+H - Make code for the lambda function to run - your previous JSON response lambda or make a simple hello world one.
+J - Get all team members Added to CodersUK on Github
+
+Note: Realistically you'd want CircleCI to checkout the code, make the zip then upload it to S3. The zipping process is a little fiddly so I've left this as optional - it's really just icing on the cake so lets bake the cake first.
+Z - Make CircleCI ZIP the files as part of the build job and remove the zip file from the github repo.
 
 ## Whats next?
-At this point perhaps you should buddy up with another developer and do one of:
-- Discuss whats been built or what their ######### hobby is.
-- Link the API to the frontend exercise one of you has already completed.
 - Chill (eh really? I thought you came here to learn).
-
-## Links to another project
-
+- I can't beleive you finished early, maybe you're actually entired to Chill! Nice work!
+- Look up what Terraform Backend State is, why you might you use it?
