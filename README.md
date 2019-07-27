@@ -33,16 +33,16 @@ The following tasks need to be done to make a working solution, I'm a pain and I
 hint: use a whiteboard!
 
 Steps:
- - A ZIP the lambda code and commit it into your Github repo where the Lambda code lives (lookup the zip format AWS requires).
- - B A API Gateway resource defined in terraform.
- - C Connect the API Gateway to the Lambda in terraform.
- - D Make the CircleCI job push the Lambda zip file into a S3 bucket anytime someone commits.
- - E A Lambda function resource defined in terraform.
- - I Make a branch on this repository to hold all infrastructure as code artifacts.
- - F Check the terraform repository does not have AWS Secret + Access keys (if it does revoke them immediately).
- - G Make a S3 bucket that the Lambda code lives in.
- - H Make code for the lambda function to run (use your previous JSON response lambda or make a simple hello world one).
- - J Get all team members Added to CodersUK on Github
+ - A: ZIP the lambda code and commit it into your Github repo where the Lambda code lives (lookup the zip format AWS requires).
+ - B: A API Gateway resource defined in terraform.
+ - C: Connect the API Gateway to the Lambda in terraform.
+ - D: Make the CircleCI job push the Lambda zip file into a S3 bucket anytime someone commits.
+ - E: A Lambda function resource defined in terraform.
+ - I: Make a branch on this repository to hold all infrastructure as code artifacts.
+ - F: Check the terraform repository does not have AWS Secret + Access keys (if it does revoke them immediately).
+ - G: Make a S3 bucket that the Lambda code lives in.
+ - H: Make code for the lambda function to run (use your previous JSON response lambda or make a simple hello world one).
+ - J: Get all team members Added to CodersUK on Github
 
 Note: Realistically you'd want CircleCI to checkout the code, make the zip then upload it to S3. The zipping process is a little fiddly so I've left this as optional - it's really just icing on the cake so lets bake the cake first.
 Z - Make CircleCI ZIP the files as part of the build job and remove the zip file from the github repo.
