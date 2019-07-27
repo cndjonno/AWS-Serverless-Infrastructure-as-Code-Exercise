@@ -31,6 +31,7 @@ The following tasks need to be done to make a working solution. I've shuffled th
 - try rate each step on complexity 1, 3, 5, 8. 
 - hint: use a whiteboard!
 - Work out who has done what - someone new should focus on terraform or something they've used before if possible.
+- when you have the order, which steps can you implement in a simple way to get most of it working end to end then improve from there? 
 
 Steps:
  - A: ZIP the lambda code and commit it into your Github repo where the Lambda code lives (lookup the zip format AWS requires).
@@ -46,6 +47,7 @@ Steps:
 
 Note: Realistically you'd want CircleCI to checkout the code, make the zip then upload it to S3. The zipping process is actually overly fiddly so I've left this as optional - it's really just icing on the cake so lets bake the cake and not burn it first.
 Z - Make CircleCI ZIP the files as part of the build job and remove the zip file from the github repo.
+
 
 ## Whats next?
 - Chill (eh really? I thought you came here to learn).
