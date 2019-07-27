@@ -23,13 +23,14 @@ Note: You should ***NEVER*** commit your AWS Access Key and Secret key into your
 7) Ask your neighbor where they're at, and help them to complete the setup because the next bit we need small teams!
 
 ## Lets setup something a bit more complicated:
-If you want to build the full infrastructure as code for the Serverless API endpoint I request you pair up with a buddy or two! There are several peices and you'll be better off working together. 
+To build the full infrastructure as code for the Serverless API endpoint we shall form a group! There are several peices and you'll be better off working together. 
 
-The following tasks need to be done to make a working solution, I'm a pain and I've shuffled the instructions so together you have to work out:
-- how it hangs together
+The following tasks need to be done to make a working solution. I've shuffled the instructions so together you have to work out:
+- how it hangs together - DIAGRAM!
 - how to independently work on bits without depending on each other too much.
 - try rate each step on complexity 1, 3, 5, 8. 
 - hint: use a whiteboard!
+- Work out who has done what - someone new should focus on terraform or something they've used before if possible.
 
 Steps:
  - A: ZIP the lambda code and commit it into your Github repo where the Lambda code lives (lookup the zip format AWS requires).
@@ -43,7 +44,7 @@ Steps:
  - H: Make code for the lambda function to run (use your previous JSON response lambda or make a simple hello world one).
  - J: Get all team members Added to CodersUK on Github
 
-Note: Realistically you'd want CircleCI to checkout the code, make the zip then upload it to S3. The zipping process is a little fiddly so I've left this as optional - it's really just icing on the cake so lets bake the cake first.
+Note: Realistically you'd want CircleCI to checkout the code, make the zip then upload it to S3. The zipping process is actually overly fiddly so I've left this as optional - it's really just icing on the cake so lets bake the cake and not burn it first.
 Z - Make CircleCI ZIP the files as part of the build job and remove the zip file from the github repo.
 
 ## Whats next?
