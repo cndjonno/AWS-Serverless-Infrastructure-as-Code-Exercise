@@ -29,8 +29,7 @@ The following tasks need to be done to make a working solution, I'm a pain and I
 - how it hangs together
 - how to independently work on bits without depending on each other too much.
 - try rate each step on complexity 1, 3, 5, 8. 
-- 
-hint: use a whiteboard!
+- hint: use a whiteboard!
 
 Steps:
  - A: ZIP the lambda code and commit it into your Github repo where the Lambda code lives (lookup the zip format AWS requires).
