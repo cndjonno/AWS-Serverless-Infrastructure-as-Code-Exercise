@@ -14,9 +14,9 @@ In this exercise you're tasked to make a repository that:
 Note: You should ***NEVER*** commit your AWS Access Key and Secret key into your github repository - bots will crawl this and steal access to your account. _Guard these keys with your life._ If you do make a mistake you can Deactivate the key in the AWS Console, and issue yourself a new one.
 
 ## Let's setup the basics
-1) Look up how to setup your local AWS CLI and configure your AWS security keys in the credientials file [Here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html#install-tool-bundled).
+1) Look up how to setup your local AWS CLI and configure your AWS security keys in the credientials file [Here].(https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html#install-tool-bundled).
 2) [Install Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html)
-3) Look up what terraform init, plan, apply commands do? [Getting Started With Terraform](https://learn.hashicorp.com/terraform/getting-started/build.html)
+3) Look up what terraform init, plan, apply commands do? [Getting Started With Terraform](https://learn.hashicorp.com/terraform/getting-started/build.html).
 4) Setup a S3 bucket (in the console first if you've never done it then) using terraform and view the bucket has shown up in AWS in your browser.
 5) Delete the S3 bucket from your terraform codebase and add Simple Notification Service instance [SNS](https://aws.amazon.com/sns/). 
 6) Run terraform plan and see what the plan output says - how many things are deleted, how many are added?
@@ -52,3 +52,5 @@ Z - Make CircleCI ZIP the files as part of the build job and remove the zip file
 - Chill (eh really? I thought you came here to learn).
 - I can't beleive you finished early, maybe you're actually entired to Chill! Nice work!
 - Look up what Terraform Backend State is, why you might you use it?
+
+Tips: For Window Users, ensure you are running Powershell/Command Line with Admin rights in order for Terraform to create/download files within Program Files.
